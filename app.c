@@ -1,14 +1,22 @@
 #include <stdio.h>
 #include <stdbool.h>
 
+void verificarIdade() {
+  short int age;
+  printf("How old are you? -> ");
+  scanf("%hd", &age);
+
+  if (age < 12) {
+    printf("Kid \n");
+  } else if (age < 18) {
+    printf("Teen \n");
+  } else {
+    printf("Adult \n");
+  }
+}
+
 int main() {
-  int slices = 17;
-  int friends = 2;
-  double slicesPerPersonInt =  slices/friends; // Result will be 8.00000
-  double slicesPerPersonDouble =  (double) slices/friends; // Result will be 8.5
-
-  printf("Not using cast: %lf \n", slicesPerPersonInt);
-  printf("Using cast: %lf \n", slicesPerPersonDouble);
-
+  verificarIdade();
   return 0;
 }
+
