@@ -1,11 +1,10 @@
 #include <stdio.h>
 
 int main() {
-  int number;
-  number = 50;
+  int age;
+  printf("Please insert your age: ");
+  scanf("%d", &age);
 
-  printf("%d: this is a number! \n", number);
-  printf("%s: this is a string! \n", "Vini!");
-
+  printf("Age typed: %d \n", age);
   return 0;
 }
