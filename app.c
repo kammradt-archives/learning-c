@@ -1,22 +1,15 @@
 #include <stdio.h>
-#include <stdbool.h>
-
-void verificarIdade() {
-  short int age;
-  printf("How old are you? -> ");
-  scanf("%hd", &age);
-
-  if (age < 12) {
-    printf("Kid \n");
-  } else if (age < 18) {
-    printf("Teen \n");
-  } else {
-    printf("Adult \n");
-  }
-}
 
 int main() {
-  verificarIdade();
+  int ages[] = {10, 12, 18};
+
+  int length = 3; // Hardcoded
+  int calculatedLength = sizeof(ages) / sizeof(ages[0]);
+
+  for (int i = 0; i < calculatedLength; i++) {
+    printf("Agee in position %d is %d \n", i, ages[i]);
+  }
+
   return 0;
 }
 
