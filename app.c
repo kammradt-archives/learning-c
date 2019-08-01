@@ -2,19 +2,13 @@
 #include <stdbool.h>
 
 int main() {
-  int a = 10;
-  float b = 20.5;
-  double c = 12.5;
-  printf("int size: %ld bytes. \n", sizeof(a));
-  printf("float size: %lu bytes. \n", sizeof(b));
-  printf("double size:  %lu bytes. \n", sizeof(c));
+  int slices = 17;
+  int friends = 2;
+  double slicesPerPersonInt =  slices/friends; // Result will be 8.00000
+  double slicesPerPersonDouble =  (double) slices/friends; // Result will be 8.5
 
-  bool t = true;
-  bool f = false;
-  printf("True boolean value: %d \n", t);
-  printf("False boolean value: %d \n", f);
-  printf("True boolean value size: %ld \n", sizeof(t));
-  printf("False boolean value size: %ld \n", sizeof(f));
+  printf("Not using cast: %lf \n", slicesPerPersonInt);
+  printf("Using cast: %lf \n", slicesPerPersonDouble);
 
   return 0;
 }
