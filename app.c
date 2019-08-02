@@ -6,21 +6,13 @@ int main() {
   printf("Insert your name: ");
   scanf("%8s", name);
 
-  int counter = 0;
-  while (name[counter] != '\0') {
-    counter++;
-  }
-  printf("Name length: %d \n", counter);
-  printf("Name length: %ld \n", strlen(name));
+  char copy[9];
+  strcpy(copy, name);
+  printf("Copied name: %s \n", copy);
 
-  if (strcmp(name, "vini") == 0) {
-    printf("You typed 'vini' \n");
-  } else {
-    printf("You do not typed 'vini' \n");
-  }
-
-  strcmp(name, "vini") == 0 ? printf("You typed 'vini' \n") : printf("You do not typed 'vini' \n");
-
+  char message[] = " is amazing! \n";
+  strcat(copy, message);
+  printf("Message of the day: %s", copy);
   return 0;
 }
 
