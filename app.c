@@ -1,18 +1,25 @@
 #include <stdio.h>
-#include <string.h>
+
+int square(int number) {
+  return number * number;
+}
+
+int cube(int number) {
+  return number * number * number;
+}
+
+int power(int number, int exponent) {
+  int result = 1;
+  for (int i = 0; i < exponent; i++) {
+    result *= number;
+  }
+  return result;
+}
 
 int main() {
-  char name[9];
-  printf("Insert your name: ");
-  scanf("%8s", name);
-
-  char copy[9];
-  strcpy(copy, name);
-  printf("Copied name: %s \n", copy);
-
-  char message[] = " is amazing! \n";
-  strcat(copy, message);
-  printf("Message of the day: %s", copy);
+  printf("Result: %d \n", square(4));
+  printf("Result: %d \n", cube(4));
+  printf("Result: %d \n", power(4, 3));
   return 0;
 }
 
