@@ -1,12 +1,20 @@
 #include <stdio.h>
-#include <stdbool.h>
 
 int main() {
-  short int inputInt;
-  do {
-    printf("Enter a number between 0 and 10: ");
-    scanf("%hd", &inputInt);
-  } while (inputInt <= 0 || inputInt >= 10 );
+  int studentGrades[][4] = {
+    {6, 7, 10, 3},
+    {9, 3, 5, 2},
+    {7, 10, 8, 6},
+  };
+  int length_columns = sizeof(studentGrades[0][0]);
+  int length_rows = (sizeof(studentGrades) / length_columns) / sizeof(studentGrades[0][0]);
+
+  for (int i = 0; i < length_rows; i++) {
+    for (int j = 0; j < length_columns; j++) {
+      printf("%d ", studentGrades[i][j]);
+    }
+    printf("\n");
+  }
 
   return 0;
 }
