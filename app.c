@@ -1,11 +1,12 @@
 #include <stdio.h>
-#include "math-lib.h"
+#define MAX_LENGTH 50
 
 int main() {
-  int ages[] = {12, 16, 13, 88, 18, 21, 43};
-  int agesLength = sizeof(ages) / sizeof(ages[0]);
+  printf("Insert your complete name: ");
+  char name[MAX_LENGTH];
+  fgets(name, MAX_LENGTH, stdin);
+  printf("Name: %s", name);
 
-  printf("Oldest: %d \n", greaterValue(ages, agesLength));
   return 0;
 }
 
