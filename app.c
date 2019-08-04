@@ -84,6 +84,8 @@ int main() {
     printf(hobbies[i].is_multiplayer ? "Yes!\n\n" : "No!\n\n");
   }
 
+  struct DatabaseRecord *recordPointer = &record;
+  printf("First name: %s \n", recordPointer->name.first_name);
   return 0;
 }
 
