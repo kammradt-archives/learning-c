@@ -1,28 +1,27 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
+#include <string.h>
+
+struct Person {
+  char name[30];
+  int age;
+  bool is_cool;
+};
+
+struct Person *createUser(char name[], int age, bool is_cool) {
+  struct Person *newPerson =  malloc(sizeof(struct Person));
+  strcpy(newPerson->name, name);
+  newPerson->age = age;
+  newPerson->is_cool = is_cool;
+  return newPerson;
+}
 
 int main() {
-  printf("How many 'ints' do you want? -> ");
-  int size;
-  scanf("%d", &size);
+  struct Person *user = createUser("Vini Kamm", 19 , true);
+  printf("%s %d %d", user->name, user->age, user->is_cool);
 
-  int *my_pointer = malloc(size * sizeof(int));
-
-  if(my_pointer==0) {
-    printf("Invalid pointer. Error allocating memory. \n\n");
-    return -1;
-  } else {
-    for (int i = 0; i < size; i++) {
-      printf("Type the %d element: ", i);
-      scanf("%d", &my_pointer[i]);
-    }
-
-    printf("The array: \n\n");
-    for (int i = 0; i < size; i++) {
-      printf("The %d element: %d\n", i, my_pointer[i]);
-    }
-  }
-  free(my_pointer);
+  free(user);
   return 0;
 }
 
